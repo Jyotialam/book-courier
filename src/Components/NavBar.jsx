@@ -11,8 +11,8 @@ const NavBar = () => {
         <NavLink
           to={"/"}
           className={({ isActive }) =>
-            `flex items-center gap-1 ${
-              isActive ? "border-b-2 border-white" : ""
+            `flex items-center gap-1 text-[#1A5908] text-base font-semibold ${
+              isActive ? "border-b-2 border-[#1A5908]" : ""
             }`
           }
         >
@@ -23,8 +23,8 @@ const NavBar = () => {
         <NavLink
           to={"/books"}
           className={({ isActive }) =>
-            `flex items-center gap-1 ${
-              isActive ? "border-b-2 border-white" : ""
+            `flex items-center gap-1 text-[#1A5908] font-semibold text-base ${
+              isActive ? "border-b-2 border-[#1A5908]" : ""
             }`
           }
         >
@@ -35,8 +35,8 @@ const NavBar = () => {
         <NavLink
           to={"/dashboard"}
           className={({ isActive }) =>
-            `flex items-center gap-1 ${
-              isActive ? "border-b-2 border-white" : ""
+            `flex items-center gap-1 text-[#1A5908] text-base font-semibold${
+              isActive ? "border-b-2 border-[#1A5908]" : ""
             }`
           }
         >
@@ -46,7 +46,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className="shadow-sm bg-[#5184AF] p-2 z-10 h-auto">
+    <div className="shadow-sm bg-white p-5 z-10 h-auto">
       <div className="navbar text-white md:w-11/12 w-full mx-auto">
         {/* LEFT */}
         <div className="navbar-start">
@@ -55,7 +55,7 @@ const NavBar = () => {
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost text-white"
+              className="btn btn-ghost text-[#063F2D]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ const NavBar = () => {
 
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content mt-3 p-2 shadow rounded-box z-10 bg-base-100 dark:bg-gray-800 text-gray-700 dark:text-white w-52"
+              className="menu menu-sm dropdown-content mt-3 p-2 shadow rounded-box z-10 bg-base-100 bg-white w-52"
             >
               {publicLinks}
               {/* {user && privateLinks} */}
@@ -83,13 +83,12 @@ const NavBar = () => {
           </div>
 
           {/* LOGO */}
-          <Link to={"/"} className="flex items-center text-2xl font-bold">
+          <Link to={"/"} className="flex items-center font-bold">
             <img
               src={logoImg}
               alt=""
-              className="md:w-20 w-16 rounded-3xl hidden md:inline"
-            />{" "}
-            HomeHero
+              className="md:w-50 w-30 border"
+            />  
           </Link>
         </div>
 
@@ -163,7 +162,7 @@ const NavBar = () => {
           <div className="flex items-center">
             <Link
               // to={"/auth/login"}
-              className="btn rounded-md ml-3 text-lg bg-[#51ACFB] text-white border-none hover:bg-blue-500"
+              className="btn rounded-md ml-3 text-lg bg-[#063F2D] text-white border-none hover:bg-green-900"
             >
               <IoLogIn /> Login
             </Link>
