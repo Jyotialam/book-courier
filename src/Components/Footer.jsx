@@ -138,19 +138,13 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="border-t border-blue-300 mt-8 pt-4">
-        <div className="w-full flex flex-col md:flex-row justify-center items-center text-center gap-3">
+        <div className="w-full flex flex-col justify-center items-center text-left gap-3">
           <p className="text-sm text-gray-200">
             © {currentYear} BookCourier. All Rights Reserved.
           </p>
 
-          <div className="hidden md:flex items-center text-sm text-gray-200">
-            <Link to="/privacy" className="hover:text-yellow-300 mr-3">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="hover:text-yellow-300">
-              Terms of Service
-            </Link>
-          </div>
+          <h1 className="text-[#4D6C43] text-8xl text-center">BOOKCOURIER</h1>
+         
         </div>
       </div>
     </footer>

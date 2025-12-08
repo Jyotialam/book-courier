@@ -26,13 +26,17 @@ const WhyChooseUs = () => {
     ];
 
     return (
-        <div className="bg-[#91CE6C] py-15">
-            <div className="w-11/12 mx-auto px-4">
+        <div className="bg-[#91CE6C]">
+            <h2 className="text-3xl font-semibold text-green-900 text-center pt-5">
+                    Why Choose Us..?
+                </h2>
+            <div className="w-11/12 mx-auto px-4 py-12">
+             
                 
                 {/* GRID */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {items.map((item, index) => (
-                        <div key={index} className="flex  items-center gap-5">
+                        <div key={index} className="flex items-start gap-5">
                             <div className="text-green-900">{item.icon}</div>
                             <div className='flex flex-col gap-2 text-left'>
                             <h3 className="text-lg font-semibold text-green-900">

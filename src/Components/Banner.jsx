@@ -48,7 +48,7 @@ const Banner = () => {
 
               {/* LEFT TEXT */}
               <div className="w-full lg:w-1/2 flex flex-col justify-center gap-4 lg:gap-6 text-center lg:text-left">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">{item.title}</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white leading-tight">{item.title}</h2>
                 <p className="text-sm sm:text-base md:text-lg text-white">{item.desc}</p>
                 <Link
                   to="/books"
