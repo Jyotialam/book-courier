@@ -75,7 +75,7 @@ const NavBar = () => {
 
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content mt-3 p-2 shadow rounded-box z-10 bg-base-100 bg-white w-52"
+              className="menu menu-sm dropdown-content mt-3 p-2 shadow rounded-box z-10 bg-white w-52"
             >
               {publicLinks}
               {/* {user && privateLinks} */}
