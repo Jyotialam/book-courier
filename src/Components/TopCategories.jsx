@@ -30,8 +30,7 @@ const TopCategories = () => {
         <p className="uppercase tracking-widest text-sm">Our Books</p>
         <h1 className="text-5xl font-serif mt-2 mb-4">Top categories</h1>
         <p className="text-gray-600 max-w-xl">
-          Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-          aspernatur aut odit aut fugit.
+          Our collection is carefully crafted to bring readers a rich experience. Each category offers unique stories that open new worlds and inspire a deeper love for reading.
         </p>
       </div>
 
