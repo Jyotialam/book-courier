@@ -4,6 +4,7 @@ import MainLayout from "../Layouts/MainLayout";
 import AuthLayout from "../Layouts/AuthLayout";
 import Register from "../Pages/Auth/Register";
 import Login from "../Pages/Auth/Login";
+import ErrorPage from "../Pages/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
         <span className="loading loading-bars loading-xl"></span>
       </div>
     ),
+    errorElement: <ErrorPage />,
 
     children: [
       {

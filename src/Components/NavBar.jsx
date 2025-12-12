@@ -64,7 +64,7 @@ const NavBar = () => {
         <NavLink
           to={"/dashboard"}
           className={({ isActive }) =>
-            `flex items-center gap-1 text-[#1A5908] text-base font-semibold${
+            `flex items-center gap-1 text-[#1A5908] text-base font-semibold ${
               isActive ? "border-b-2 border-[#1A5908]" : ""
             }`
           }

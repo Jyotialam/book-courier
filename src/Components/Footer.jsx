@@ -18,8 +18,6 @@ const Footer = () => {
             <span className=" text-white px-2 py-1 rounded">BookCourier</span>
           </Link>
 
-          <p className="text-gray-300 mt-3 text-sm">Library to home delivery</p>
-
           <ul className="space-y-2 mt-4 text-gray-200">
             <li>
               <Link to="/books" className="hover:text-yellow-300">
@@ -144,7 +142,6 @@ const Footer = () => {
           </p>
 
           <h1 className="text-[#4D6C43] text-8xl text-center">BOOKCOURIER</h1>
-         
         </div>
       </div>
     </footer>
