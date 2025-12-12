@@ -8,12 +8,10 @@ import { FaUser } from "react-icons/fa";
 import { ImBoxAdd } from "react-icons/im";
 import { FaGear } from "react-icons/fa6";
 
-
-
 const NavBar = () => {
-   const { user,signOutUser } = useAuth();
-   //
-    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const { user, signOutUser } = useAuth();
+  //
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
     const html = document.querySelector("html");
@@ -48,6 +46,18 @@ const NavBar = () => {
           }
         >
           Books
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to={"/request-delivery"}
+          className={({ isActive }) =>
+            `flex items-center gap-1 text-[#1A5908] font-semibold text-base ${
+              isActive ? "border-b-2 border-[#1A5908]" : ""
+            }`
+          }
+        >
+          Request Delivery
         </NavLink>
       </li>
       <li>
@@ -103,11 +113,7 @@ const NavBar = () => {
 
           {/* LOGO */}
           <Link to={"/"} className="flex items-center font-bold">
-            <img
-              src={logoImg}
-              alt=""
-              className="md:w-50 w-30 border"
-            />  
+            <img src={logoImg} alt="" className="md:w-50 w-30 border" />
           </Link>
         </div>
 
@@ -152,8 +158,8 @@ const NavBar = () => {
                   </Link>
                 </li>
 
-               {/* Theme toggle */}
-          <div className="flex items-center gap-2 px-2 py-1">
+                {/* Theme toggle */}
+                <div className="flex items-center gap-2 px-2 py-1">
                   <input
                     onChange={(e) => handleTheme(e.target.checked)}
                     type="checkbox"
@@ -177,15 +183,15 @@ const NavBar = () => {
                 <IoLogOut /> Logout
               </button>
             </div>
-          ) : ( 
-          <div className="flex items-center">
-            <Link
-              to={"/login"}
-              className="btn rounded-md ml-3 text-lg bg-[#063F2D] text-white border-none hover:bg-green-900"
-            >
-              <IoLogIn /> Login
-            </Link>
-          </div>
+          ) : (
+            <div className="flex items-center">
+              <Link
+                to={"/login"}
+                className="btn rounded-md ml-3 text-lg bg-[#063F2D] text-white border-none hover:bg-green-900"
+              >
+                <IoLogIn /> Login
+              </Link>
+            </div>
           )}
         </div>
       </div>
