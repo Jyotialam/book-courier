@@ -6,7 +6,7 @@ import logoImg from "../assets/logo.png";
 
 const AuthLayout = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white text-black">
       <Link to={"/"} className="flex items-center font-bold px-4">
         <img src={logoImg} alt="" className="md:w-50 w-30" />
       </Link>

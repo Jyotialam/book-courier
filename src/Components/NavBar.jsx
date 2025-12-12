@@ -5,13 +5,6 @@ import { Link, NavLink } from "react-router";
 import logoImg from "../assets/logo.png";
 import useAuth from "../hooks/useAuth";
 import { FaUser } from "react-icons/fa";
-
-
-// import { GoHomeFill } from "react-icons/go";
-
-
-
-// import { MdAddToPhotos, MdHomeRepairService } from "react-icons/md";
 import { ImBoxAdd } from "react-icons/im";
 import { FaGear } from "react-icons/fa6";
 

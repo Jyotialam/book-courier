@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigation } from "react-router";
 import SocialLogin from "./SocialLogin";
 import useAuth from "../../hooks/useAuth";
+import { toast } from "react-toastify";
 
 
 const Register = () => {
+  const navigate = useNavigation();
+  const location = useLocation();
+  //
+     useEffect(() => {
+    document.title = "Register | BookCourier";
+  }, []);
   //react hooks
   const {
     register,
@@ -22,9 +29,13 @@ const Register = () => {
     registerUser(data.email, data.password)
       .then((result) => {
         console.log(result.user);
+         toast.success("User created successfully!");
+            event.target.reset();
+            navigate(location.state?.from?.pathname || "/");
       })
       .catch((error) => {
         console.log(error);
+         toast.error(error.message);
       });
   };
   return (

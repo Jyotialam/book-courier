@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
+import { useLocation, useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 
 const SocialLogin = () => {
   const { signInGoogle } = useAuth();
+  const navigate = useNavigate();
+   const location = useLocation();
+  //
+   useEffect(() => {
+    document.title = "Login | BookCourier";
+  }, []);
   //
   const handleGoogleSignIn = () => {
     signInGoogle()
     .then((result) => {
       console.log(result.user);
+       toast.success("Successfully signed in with Google");
+      navigate(location.state || "/");
     })
     .catch(error=>{
         console.log(error);

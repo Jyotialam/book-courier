@@ -3,6 +3,7 @@ import Home from "../Pages/Home/Home";
 import MainLayout from "../Layouts/MainLayout";
 import AuthLayout from "../Layouts/AuthLayout";
 import Register from "../Pages/Auth/Register";
+import Login from "../Pages/Auth/Login";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "login",
+        Component: Login,
       },
       {
         path: "register",

@@ -63,7 +63,7 @@
 ---
 
 ## Technologies Used
-- **Frontend:** React,React-router, TailwindCSS, DaisyUI, React Icons,swiper,react-leaflet, react-fast-marquee, 
+- **Frontend:** React,React-router, TailwindCSS, DaisyUI, React Icons,swiper,react-leaflet, react-fast-marquee, react-toastify
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB 
 - **Authentication:** Firebase Authentication
