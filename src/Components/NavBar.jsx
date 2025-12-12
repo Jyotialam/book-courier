@@ -3,8 +3,11 @@ import { GoHomeFill } from "react-icons/go";
 import { IoLogIn } from "react-icons/io5";
 import { Link, NavLink } from "react-router";
 import logoImg from "../assets/logo.png";
+import useAuth from "../hooks/useAuth";
+import { FaUser } from "react-icons/fa";
 
 const NavBar = () => {
+   const { user } = useAuth();
   const publicLinks = (
     <>
       <li>
@@ -102,7 +105,7 @@ const NavBar = () => {
 
         {/* RIGHT */}
         <div className="navbar-end gap-3 flex flex-wrap justify-end">
-          {/* {user ? (
+          {user ? (
             <div className="dropdown dropdown-end z-50">
               <div
                 tabIndex={0}
@@ -133,8 +136,8 @@ const NavBar = () => {
                   </Link>
                 </li>
 
-                {/* Theme toggle */}
-          {/* <div className="flex items-center gap-2 px-2 py-1">
+                {/* Theme toggle
+          <div className="flex items-center gap-2 px-2 py-1">
                   <input
                     onChange={(e) => handleTheme(e.target.checked)}
                     type="checkbox"
@@ -157,8 +160,8 @@ const NavBar = () => {
               >
                 <IoLogOut /> Logout
               </button>
-            </div> */}
-          {/* ) : (  */}
+            </div>
+          ) : ( 
           <div className="flex items-center">
             <Link
               // to={"/auth/login"}
