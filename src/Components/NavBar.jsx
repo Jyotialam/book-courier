@@ -1,13 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GoHomeFill } from "react-icons/go";
-import { IoLogIn } from "react-icons/io5";
+import { IoLogIn, IoLogOut } from "react-icons/io5";
 import { Link, NavLink } from "react-router";
 import logoImg from "../assets/logo.png";
 import useAuth from "../hooks/useAuth";
 import { FaUser } from "react-icons/fa";
 
+
+// import { GoHomeFill } from "react-icons/go";
+
+
+
+// import { MdAddToPhotos, MdHomeRepairService } from "react-icons/md";
+import { ImBoxAdd } from "react-icons/im";
+import { FaGear } from "react-icons/fa6";
+
+
+
 const NavBar = () => {
-   const { user } = useAuth();
+   const { user,signOutUser } = useAuth();
+   //
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark" : "light");
+  };
   const publicLinks = (
     <>
       <li>
@@ -136,7 +159,7 @@ const NavBar = () => {
                   </Link>
                 </li>
 
-                {/* Theme toggle
+               {/* Theme toggle */}
           <div className="flex items-center gap-2 px-2 py-1">
                   <input
                     onChange={(e) => handleTheme(e.target.checked)}
@@ -156,7 +179,7 @@ const NavBar = () => {
 
               <button
                 onClick={signOutUser}
-                className="btn rounded-md ml-3 text-lg bg-[#51ACFB] text-white border-none hover:bg-blue-500"
+                className="btn rounded-md ml-3 text-lg bg-[#063F2D] text-white border-none hover:bg-green-900"
               >
                 <IoLogOut /> Logout
               </button>
@@ -164,13 +187,13 @@ const NavBar = () => {
           ) : ( 
           <div className="flex items-center">
             <Link
-              // to={"/auth/login"}
+              to={"/login"}
               className="btn rounded-md ml-3 text-lg bg-[#063F2D] text-white border-none hover:bg-green-900"
             >
               <IoLogIn /> Login
             </Link>
           </div>
-          {/* )} */}
+          )}
         </div>
       </div>
     </div>
