@@ -134,7 +134,7 @@ const NavBar = () => {
                 role="button"
                 className="btn btn-ghost btn-circle avatar"
               >
-                <div className="w-[50px] border-2 border-white rounded-full">
+                <div className="w-[50px] border-2 border-black rounded-full">
                   <img
                     alt="User"
                     referrerPolicy="no-referrer"

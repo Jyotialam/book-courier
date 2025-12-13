@@ -10,7 +10,7 @@ const AuthLayout = () => {
       <Link to={"/"} className="flex items-center font-bold px-4">
         <img src={logoImg} alt="" className="md:w-50 w-30" />
       </Link>
-      <div className="flex mt-10 items-center max-w-7xl mx-auto">
+      <div className="flex mt-10 items-center w-full mx-auto ">
         <div className="flex-1">
           <Outlet />
         </div>

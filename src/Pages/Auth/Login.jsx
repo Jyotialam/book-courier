@@ -38,9 +38,10 @@ const Login = () => {
       });
   };
   return (
-    <div className="w-full mx-auto max-w-sm ">
-      <h3 className="text-3xl text-center">Welcome back</h3>
+    <div className="w-full mx-auto max-w-sm md:w-1/2">
+      <h3 className="text-3xl md:text-4xl text-center">Welcome back</h3>
       <p className="text-center">Please Login</p>
+
       <form onSubmit={handleSubmit(handleLogin)}>
         <fieldset className="fieldset">
           {/* email */}
@@ -48,7 +49,7 @@ const Login = () => {
           <input
             type="email"
             {...register("email", { required: true })}
-            className="input w-full"
+            className="input w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2"
             placeholder="Email"
           />
           {errors.email?.type === "required" && (
@@ -62,7 +63,8 @@ const Login = () => {
               required: true,
               minLength: 6,
             })}
-            className="input w-full"
+            className="input w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2"
+           
             placeholder="Password"
           />
 
@@ -87,7 +89,7 @@ const Login = () => {
         </fieldset>
         <p>
           New to Book Courier?
-          <Link className="text-blue-500" to="/register">
+          <Link className="text-blue-500 font-semibold hover:text-blue-700" to="/register">
             Register
           </Link>
         </p>
