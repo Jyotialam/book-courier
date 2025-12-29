@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { GoHomeFill } from "react-icons/go";
-import { IoLogIn, IoLogOut } from "react-icons/io5";
+import { IoBookSharp, IoLogIn, IoLogOut } from "react-icons/io5";
 import { Link, NavLink } from "react-router";
 import logoImg from "../assets/logo.png";
 import useAuth from "../hooks/useAuth";
 import { FaUser } from "react-icons/fa";
 import { ImBoxAdd } from "react-icons/im";
 import { FaGear } from "react-icons/fa6";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { MdDashboard } from "react-icons/md";
 
 const NavBar = () => {
   const { user, signOutUser } = useAuth();
@@ -14,14 +16,11 @@ const NavBar = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
-    const html = document.querySelector("html");
+    const html = document.documentElement;
     html.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const handleTheme = (checked) => {
-    setTheme(checked ? "dark" : "light");
-  };
   const publicLinks = (
     <>
       <li>
@@ -40,26 +39,15 @@ const NavBar = () => {
         <NavLink
           to={"/books"}
           className={({ isActive }) =>
-            `flex items-center gap-1 text-[#1A5908] font-semibold text-base ${
+            `flex items-center gap-2 text-[#1A5908] font-semibold text-base ${
               isActive ? "border-b-2 border-[#1A5908]" : ""
             }`
           }
-        >
+        > <IoBookSharp size={20}/>
           Books
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to={"/request-delivery"}
-          className={({ isActive }) =>
-            `flex items-center gap-1 text-[#1A5908] font-semibold text-base ${
-              isActive ? "border-b-2 border-[#1A5908]" : ""
-            }`
-          }
-        >
-          Request Delivery
-        </NavLink>
-      </li>
+   
       <li>
         <NavLink
           to={"/dashboard"}
@@ -68,14 +56,14 @@ const NavBar = () => {
               isActive ? "border-b-2 border-[#1A5908]" : ""
             }`
           }
-        >
+        > <MdDashboard  size={20}/>
           Dashboard
         </NavLink>
       </li>
     </>
   );
   return (
-    <div className="shadow-sm bg-white p-5 z-10 h-auto">
+    <div className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="navbar text-white md:w-11/12 w-full mx-auto">
         {/* LEFT */}
         <div className="navbar-start">
@@ -127,6 +115,25 @@ const NavBar = () => {
 
         {/* RIGHT */}
         <div className="navbar-end gap-3 flex flex-wrap justify-end">
+          {/* theme toggle */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="flex items-center gap-2 p-2 rounded-md
+             hover:bg-gray-100  text-black cursor-pointer"
+          >
+            {theme === "dark" ? (
+              <>
+                <MdLightMode
+                  size={30}
+                  className="text-yellow-700 font-extrabold"
+                />
+              </>
+            ) : (
+              <>
+                <MdDarkMode size={30} className="" />
+              </>
+            )}
+          </button>
           {user ? (
             <div className="dropdown dropdown-end z-50">
               <div
@@ -151,29 +158,6 @@ const NavBar = () => {
                   <li className="text-sm font-bold">{user.displayName}</li>
                   <li className="text-xs">{user.email}</li>
                 </div>
-
-                <li className="mt-3">
-                  <Link to={"/profile"}>
-                    <FaUser /> Profile
-                  </Link>
-                </li>
-
-                {/* Theme toggle */}
-                <div className="flex items-center gap-2 px-2 py-1">
-                  <input
-                    onChange={(e) => handleTheme(e.target.checked)}
-                    type="checkbox"
-                    defaultChecked={localStorage.getItem("theme") === "dark"}
-                    className="toggle"
-                  />
-                  <span>Dark mode</span>
-                </div>
-
-                <li>
-                  <a>
-                    <FaGear /> Settings
-                  </a>
-                </li>
               </ul>
 
               <button
